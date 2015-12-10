@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="jar" name="UDFs">
+	<path id="UDFs.classpath">
+		<pathelement location="jars/hamcrest-core-1.1.jar " />
+		<pathelement location="jars/jackson-annotations-2.6.0.jar" />
+		<pathelement location="jars/junit-3.8.2.jar" />
+	</path>
+	<manifestclasspath property="neededClasspath" jarfile="../lib/UDFs.jar">
+		<classpath refid="UDFs.classpath"></classpath>
+	</manifestclasspath>
+	<target name="jar">
+		<jar destfile="../lib/UDFs.jar" basedir="bin">
+			<manifest>
+				<attribute name="Class-Path" value="${neededClasspath}"/>
+			</manifest>
+		</jar>
+	</target>
+</project>
